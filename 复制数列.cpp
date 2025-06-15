@@ -11,15 +11,15 @@ int main() {
             vec.push_back(a[j]);
         }
     }
-    vector<int> dp(n * n, 1);
+    vector<int> vec1(n * n, 1);
     int ans = 1;
     for(int i = 0; i < n * n; i++) {
         for(int j = 0; j < i; j++) {
             if(vec[i] > vec[j]) {
-                dp[i] = max(dp[i], dp[j] + 1);
+                vec1[i] = max(vec1[i], (vec1[j] + 1));
             }
         }
-        ans = max(ans, dp[i]);
+        ans = max(ans, vec1[i]);
     }
     cout << ans << endl;
     return 0;
