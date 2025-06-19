@@ -17,9 +17,7 @@ void DFS(int x,int deep){
         e = x;
         best = p;
     }
-    for (auto y : a[x]) {
-        DFS(y, deep + 1);
-    }
+    for (auto y : a[x]) DFS(y, deep + 1);
     p.pop_back();
 }
 int main(){
